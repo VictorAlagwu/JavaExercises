@@ -23,7 +23,8 @@ public class SimpleCalculator {
 		it receive the second number*/
 		
 		System.out.print("Enter the mathematical operator to be used: "); //Ask the user to input the mathematical operator to be used
-		sign=input.next().charAt(0); //Receive input from user
+		sign=input.next().charAt(0);
+		//Receive input from user
 		if (sign == '+' )/*making use of if statement to determine the addition sign*/{
 			ans=fnum + snum;
 			System.out.println(fnum +" "+sign +" "+snum +"= "+" "+ ans );
@@ -35,6 +36,14 @@ public class SimpleCalculator {
 		}
 		else if(sign == '/'){
 				ans=fnum/snum;
+			try {
+           		ans=fnum/snum;  // throw Exception
+        }
+        catch (ArithmeticException e) {
+            // Exception handler
+            System.out.println(
+                "Divided by zero operation cannot possible");
+        }
 				System.out.println(fnum +" "+sign +" "+snum +"= "+" "+ ans );
 	    }
 		else if(sign == '*'){
